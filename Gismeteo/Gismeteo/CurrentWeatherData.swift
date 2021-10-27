@@ -11,6 +11,7 @@ struct CurrentWeatherData: Codable {
     let name: String
     let main: Main
     let weather: [Weather]
+    let wind: Wind
 }
 
 struct Main: Codable {
@@ -40,4 +41,9 @@ struct Weather: Codable {
 //        default: return "nosign"
 //        }
 //    }
+}
+
+struct Wind: Codable {
+    let speed: Double
+    //let direction: Int
 }

@@ -54,7 +54,7 @@ class ViewController: UIViewController, ManagerDelegate {
             self.labelTemp.text = "Температура \(weather.tempString)"
             self.tempLikeFeelsLabel.text = "Ощущяется \(weather.tempLikeFeelsString)"
             self.tempMaxLabel.text = "Макс. \(weather.tempMaxString), мин. \(weather.tempMinString)"
-            self.tempMinLabel.text = "Мин. \(weather.tempMinString)"
+            self.tempMinLabel.text = "Ск. ветра \(weather.speedWindString) м/с"
             self.imageView.image = UIImage(systemName: weather.systemIconNameString)
         }
     }

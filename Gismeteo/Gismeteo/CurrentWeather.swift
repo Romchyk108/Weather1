@@ -13,18 +13,22 @@ struct CurrentWeather {
     var tempString : String {
         return String(format: "%.0f", temp)
     }
+    
     let tempLikeFeels: Double
     var tempLikeFeelsString: String {
         return String(format: "%.0f", tempLikeFeels)
     }
+    
     let tempMax: Double
     var tempMaxString: String{
-        return "\(tempMax.rounded())"
+        return String(format: "%.0f", tempMax)
     }
+    
     let tempMin: Double
     var tempMinString: String{
-        return "\(tempMin.rounded())"
+        return String(format: "%.0f", tempMin)
     }
+    
     let conditionCode: Int
     var systemIconNameString: String{
         switch conditionCode {
@@ -39,6 +43,12 @@ struct CurrentWeather {
         }
     }
     
+    let speedWind: Double
+    var speedWindString: String{
+        return String(format: "%.1f", speedWind)
+    }
+    //let directionWind: Int
+    
     init?(CurrentWeatherData: CurrentWeatherData){
         cityName = CurrentWeatherData.name
         temp = CurrentWeatherData.main.temp
@@ -46,5 +56,7 @@ struct CurrentWeather {
         tempMin = CurrentWeatherData.main.tempMin
         tempMax = CurrentWeatherData.main.tempMax
         conditionCode = CurrentWeatherData.weather.first!.id
+        speedWind = CurrentWeatherData.wind.speed
+        //directionWind = CurrentWeatherData.wind.direction
     }
 }
